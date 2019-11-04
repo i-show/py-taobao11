@@ -29,13 +29,9 @@ def back():
 
 
 def look_detail():
-    os.system('adb shell input swipe 200 1000 200 100 500')
-    '''
     for i in range(4):
         os.system('adb shell input swipe 200 1000 200 100 500')
         time.sleep(4)
-    '''
-
 
 if __name__ == '__main__':
     # 首先创建一个文件夹
