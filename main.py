@@ -59,8 +59,10 @@ if __name__ == '__main__':
             # 进入店铺
             print("********** 进入店铺 ***************")
             tap(x=x_point, y=y_point)
+
             time.sleep(2)
-            os.system('adb shell input swipe 500 200 500 100 100')  # 先把广告拿走
+            os.system('adb shell input swipe 500 2000 500 1900 200')  # 先把广告拿走
+            time.sleep(2)
             # 判断是否逛过
             detial_file_name = 'detial_{}_{}.png'.format(i, circle_index)
             pull_screenshot(detial_file_name)
