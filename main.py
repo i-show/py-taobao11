@@ -41,9 +41,9 @@ if __name__ == '__main__':
     if not os.path.exists(LOCAL_PATH):
         os.makedirs(LOCAL_PATH)
 
-    circle_index = 0
+
     # 手动进入首屏
-    for i in range(4):
+    for i in range(6):
         # 滑动到店铺列表
         swipe_up()
         time.sleep(3)
@@ -53,6 +53,7 @@ if __name__ == '__main__':
         # 分析图像
         store_list = find_store("{}/{}".format(LOCAL_PATH, filename))
         print("准备逛 ", len(store_list), " 家店铺")
+        circle_index = 0
         for store in store_list:
             x_point = store[0]
             y_point = store[1]
@@ -61,7 +62,7 @@ if __name__ == '__main__':
             tap(x=x_point, y=y_point)
 
             time.sleep(2)
-            os.system('adb shell input swipe 500 2000 500 1900 200')  # 先把广告拿走
+            os.system('adb shell input swipe 500 1700 500 1600 200')  # 先把广告拿走
             time.sleep(2)
             # 判断是否逛过
             detial_file_name = 'detial_{}_{}.png'.format(i, circle_index)

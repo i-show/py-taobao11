@@ -93,7 +93,7 @@ def find_store(filename):
         center = (int(x), int(y))
         radius = int(radius)
         # 对圆进行筛选
-        if radius <= 400 and radius >= 130:
+        if radius <= 400 and radius >= 120:
             # 先进行一轮筛选
             store_list.append({"center": center, "radius": radius})
             img = cv2.circle(img, center, radius, (0, 255, 0), 2)
